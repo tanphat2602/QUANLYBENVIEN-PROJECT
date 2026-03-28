@@ -1,0 +1,324 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|c:\\users\\phatd\\downloads\\quanlybenhvien\\quanlybenhvien\\quanlybenhvien\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\docter\\patients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\docter\\patients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\docter\\appointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\docter\\appointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\docter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\docter\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\patients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\patients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\controllers\\public\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\controllers\\public\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\controllers\\public\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\controllers\\public\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\models\\qlbv.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\models\\qlbv.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\models\\qlbv.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\models\\qlbv.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\quanlybenhvien\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C86C9FAB-671E-4E84-83BA-56D4548DAD3A}|QuanLyBenhVien\\QuanLyBenhVien.csproj|solutionrelative:quanlybenhvien\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DoctorController.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\DoctorController.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Controllers\\DoctorController.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\DoctorController.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Controllers\\DoctorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T14:31:23.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Patients\\Index.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Patients\\Index.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Patients\\Index.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Patients\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T14:30:26.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patients.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\Patients.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Docter\\Patients.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\Patients.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Docter\\Patients.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T14:30:17.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Appointments.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\Appointments.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Docter\\Appointments.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\Appointments.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Docter\\Appointments.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T14:30:15.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\index.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Docter\\index.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Docter\\index.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Docter\\index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T14:30:12.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Controllers\\PatientsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA7wCkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T14:29:41.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\App_Start\\BundleConfig.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T15:18:54.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T15:18:56.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T11:08:31.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T15:18:57.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Admin\\AdminController.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Controllers\\Admin\\AdminController.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Admin\\AdminController.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Controllers\\Admin\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:32:13.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Public\\HomeController.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Controllers\\Public\\HomeController.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Public\\HomeController.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Controllers\\Public\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:50:29.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Public\\AccountController.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Controllers\\Public\\AccountController.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Controllers\\Public\\AccountController.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Controllers\\Public\\AccountController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAqwIAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:51:21.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T15:18:34.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Web.config",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Web.config",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-04T15:18:27.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "QLBV.designer.cs",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Models\\QLBV.designer.cs",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Models\\QLBV.designer.cs",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Models\\QLBV.designer.cs",
+              "RelativeToolTip": "QuanLyBenhVien\\Models\\QLBV.designer.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAgwGkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:50:11.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "QLBV.dbml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Models\\QLBV.dbml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Models\\QLBV.dbml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Models\\QLBV.dbml",
+              "RelativeToolTip": "QuanLyBenhVien\\Models\\QLBV.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-04-07T15:49:21.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-07T15:32:48.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "QuanLyBenhVien\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\phatd\\Downloads\\QuanLyBenhVien\\QuanLyBenhVien\\QuanLyBenhVien\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "QuanLyBenhVien\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T11:18:01.491Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

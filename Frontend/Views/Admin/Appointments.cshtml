@@ -1,0 +1,164 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Appointment>
+@{
+    ViewData["Title"] = "Quản lý Lịch hẹn";
+    Layout = "_Layout";
+    var appointments = Model?.ToList() ?? new List<QuanLyBenhVien.Frontend.Models.Appointment>();
+}
+
+<!-- Header -->
+<section style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 40px 0; margin: -40px -15px 40px; border-radius: 0 0 50px 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 style="font-size: 2rem; font-weight: 700;"><i class="fas fa-calendar-check me-3"></i>Quản lý Lịch hẹn</h1>
+                <p class="mt-2" style="opacity: 0.9;">Danh sách tất cả lịch hẹn khám bệnh</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="/Admin/CreateAppointment" class="btn" style="background: white; color: #7c3aed; font-weight: 600; border-radius: 25px; padding: 10px 25px;">
+                    <i class="fas fa-plus me-2"></i>Tạo lịch hẹn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Alert -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show"><i class="fas fa-check-circle me-2"></i>@TempData["Success"]<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show"><i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+}
+
+<!-- Stats -->
+<section class="mb-4">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-clock" style="font-size: 1.5rem; color: #f59e0b;"></i>
+                        <h4 class="mt-2 mb-0" style="color: #0f4c75;">@appointments.Count(a => a.Status == "Chờ khám")</h4>
+                        <small class="text-muted">Chờ khám</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-user-check" style="font-size: 1.5rem; color: #11998e;"></i>
+                        <h4 class="mt-2 mb-0" style="color: #0f4c75;">@appointments.Count(a => a.Status == "Đã khám")</h4>
+                        <small class="text-muted">Đã khám</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-calendar-day" style="font-size: 1.5rem; color: #667eea;"></i>
+                        <h4 class="mt-2 mb-0" style="color: #0f4c75;">@appointments.Count(a => a.AppointmentDate == DateTime.Today.ToString("yyyy-MM-dd"))</h4>
+                        <small class="text-muted">Hôm nay</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-procedures" style="font-size: 1.5rem; color: #dc2626;"></i>
+                        <h4 class="mt-2 mb-0" style="color: #0f4c75;">@appointments.Count(a => a.IsEmergency)</h4>
+                        <small class="text-muted">Cấp cứu</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Table -->
+<section>
+    <div class="container">
+        <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white;">
+                            <tr>
+                                <th class="border-0 py-3 ps-4">Mã</th>
+                                <th class="border-0 py-3">Bệnh nhân</th>
+                                <th class="border-0 py-3">Bác sĩ</th>
+                                <th class="border-0 py-3">Khoa</th>
+                                <th class="border-0 py-3">Ngày/Giờ</th>
+                                <th class="border-0 py-3">Loại</th>
+                                <th class="border-0 py-3">Trạng thái</th>
+                                <th class="border-0 py-3 text-center">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (appointments.Any())
+                            {
+                                foreach (var appt in appointments)
+                                {
+                                    <tr>
+                                        <td class="ps-4 fw-bold">#@appt.AppointmentID</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div style="width: 35px; height: 35px; background: #0f4c75; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                                                    <i class="fas fa-user text-white" style="font-size: 0.8rem;"></i>
+                                                </div>
+                                                <span>@appt.PatientName</span>
+                                                @if (appt.IsEmergency)
+                                                {
+                                                    <span class="badge ms-2" style="background: #dc2626;"><i class="fas fa-exclamation-circle me-1"></i>Cấp cứu</span>
+                                                }
+                                            </div>
+                                        </td>
+                                        <td><i class="fas fa-user-md text-muted me-1"></i>@appt.DoctorName</td>
+                                        <td>@appt.DepartmentName</td>
+                                        <td>
+                                            <div>
+                                                <i class="fas fa-calendar text-muted me-1"></i>@appt.AppointmentDate<br>
+                                                <small class="text-muted"><i class="fas fa-clock me-1"></i>@appt.TimeSlot</small>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge" style="background: #ede9fe; color: #7c3aed;">@appt.AppointmentType</span></td>
+                                        <td>
+                                            @{
+                                                var statusClass = appt.Status switch
+                                                {
+                                                    "Chờ khám" => "background: #fef3c7; color: #d97706;",
+                                                    "Đã khám" => "background: #dcfce7; color: #15803d;",
+                                                    "Đã hủy" => "background: #fee2e2; color: #dc2626;",
+                                                    _ => "background: #f3f4f6; color: #6b7280;"
+                                                };
+                                            }
+                                            <span class="badge" style="@statusClass">@appt.Status</span>
+                                        </td>
+                                        <td class="text-center">
+                                            @if (appt.Status == "Chờ khám")
+                                            {
+                                                <a href="/Admin/CancelAppointment/@appt.AppointmentID" class="btn btn-sm btn-outline-danger" title="Hủy" onclick="return confirm('Hủy lịch hẹn này?')">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="8" class="text-center py-5">
+                                        <i class="fas fa-calendar-times" style="font-size: 3rem; color: #d1d5db;"></i>
+                                        <p class="text-muted mt-2">Không có lịch hẹn nào</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,131 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.EmergencyRequest>
+@{
+    ViewData["Title"] = "Cấp cứu";
+    Layout = "_Layout";
+    var emergencies = Model?.ToList() ?? new List<QuanLyBenhVien.Frontend.Models.EmergencyRequest>();
+}
+
+<!-- Header -->
+<section style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); color: white; padding: 40px 0; margin: -40px -15px 40px; border-radius: 0 0 50px 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 style="font-size: 2rem; font-weight: 700;"><i class="fas fa-ambulance me-3"></i>Hệ thống Cấp cứu</h1>
+                <p class="mt-2" style="opacity: 0.9;">Quản lý yêu cầu cấp cứu khẩn cấp</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <button class="btn" style="background: white; color: #dc2626; font-weight: 600; border-radius: 25px; padding: 10px 25px;">
+                    <i class="fas fa-phone-alt me-2"></i>Gọi cấp cứu: 115
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Alert -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>@TempData["Success"]</div>
+}
+
+<!-- Stats -->
+<section class="mb-4">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px; border-left: 4px solid #dc2626;">
+                    <div class="card-body">
+                        <i class="fas fa-bell" style="font-size: 2rem; color: #dc2626;"></i>
+                        <h2 class="mt-2 mb-0" style="color: #dc2626;">@emergencies.Count(e => e.Status == "Chờ xử lý")</h2>
+                        <small class="text-muted">Chờ xử lý</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <div class="card-body">
+                        <i class="fas fa-spinner" style="font-size: 2rem; color: #f59e0b;"></i>
+                        <h2 class="mt-2 mb-0" style="color: #f59e0b;">@emergencies.Count(e => e.Status == "Đang xử lý")</h2>
+                        <small class="text-muted">Đang xử lý</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px; border-left: 4px solid #059669;">
+                    <div class="card-body">
+                        <i class="fas fa-check-circle" style="font-size: 2rem; color: #059669;"></i>
+                        <h2 class="mt-2 mb-0" style="color: #059669;">@emergencies.Count(e => e.Status == "Đã xử lý")</h2>
+                        <small class="text-muted">Đã xử lý</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency List -->
+<section>
+    <div class="container">
+        @if (!emergencies.Any())
+        {
+            <div class="card border-0 shadow-sm text-center py-5" style="border-radius: 15px;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; color: #dcfce7;"></i>
+                <h4 class="mt-3 text-success">Không có yêu cầu cấp cứu</h4>
+                <p class="text-muted">Tất cả các yêu cầu đã được xử lý</p>
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var emergency in emergencies)
+                {
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100" style="border-radius: 15px; border-left: 5px solid @(emergency.Status == "Chờ xử lý" ? "#dc2626" : emergency.Status == "Đang xử lý" ? "#f59e0b" : "#059669");">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <span class="badge @(emergency.Status == "Chờ xử lý" ? "bg-danger" : emergency.Status == "Đang xử lý" ? "bg-warning" : "bg-success")">
+                                            @emergency.Status
+                                        </span>
+                                        <h5 class="mt-2 mb-0">#@emergency.RequestID - @emergency.PatientName</h5>
+                                    </div>
+                                    <div class="text-end">
+                                        <i class="fas fa-clock text-muted"></i>
+                                        <small class="text-muted d-block">@emergency.RequestTime?.ToString("HH:mm dd/MM")</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <i class="fas fa-stethoscope text-primary me-2"></i>
+                                    <span>@emergency.Reason</span>
+                                </div>
+
+                                @if (!string.IsNullOrEmpty(emergency.AssignedDoctorName))
+                                {
+                                    <div class="mb-3">
+                                        <i class="fas fa-user-md text-success me-2"></i>
+                                        <span>Bác sĩ: <strong>@emergency.AssignedDoctorName</strong></span>
+                                    </div>
+                                }
+
+                                @if (emergency.Status == "Chờ xử lý")
+                                {
+                                    <div class="d-flex gap-2">
+                                        <select class="form-select form-select-sm" style="flex: 1;">
+                                            <option value="">Chọn bác sĩ...</option>
+                                            <option value="1">Bs. Nguyễn Văn A</option>
+                                            <option value="2">Bs. Trần Thị B</option>
+                                        </select>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fas fa-check me-1"></i>Xử lý
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>

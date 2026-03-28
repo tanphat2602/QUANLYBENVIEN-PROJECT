@@ -1,0 +1,104 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Appointment>
+@{
+    ViewData["Title"] = "Lịch hẹn của tôi";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-calendar-check me-2"></i>Lịch hẹn của tôi</h2>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <a href="/Patient/BookAppointment" class="btn btn-primary-custom">
+                <i class="fas fa-plus me-2"></i>Đặt lịch khám mới
+            </a>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ngày</th>
+                                <th>Giờ</th>
+                                <th>Bác sĩ</th>
+                                <th>Khoa</th>
+                                <th>Loại khám</th>
+                                <th>Lý do</th>
+                                <th>Trạng thái</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var apt in Model)
+                            {
+                                <tr>
+                                    <td>@apt.AppointmentDate</td>
+                                    <td>@apt.TimeSlot</td>
+                                    <td>@apt.DoctorName</td>
+                                    <td>@apt.DepartmentName</td>
+                                    <td>@apt.AppointmentType</td>
+                                    <td>@apt.Reason</td>
+                                    <td>
+                                        @{
+                                            var statusClass = apt.Status switch
+                                            {
+                                                "Hoàn thành" => "bg-success",
+                                                "Đã xác nhận" => "bg-primary",
+                                                "Chờ xác nhận" => "bg-warning",
+                                                "Đã hủy" => "bg-danger",
+                                                _ => "bg-secondary"
+                                            };
+                                        }
+                                        <span class="badge @statusClass">@apt.Status</span>
+                                    </td>
+                                    <td>
+                                        @if (apt.Status == "Chờ xác nhận")
+                                        {
+                                            <form action="/Patient/CancelAppointment/@apt.AppointmentID" method="post" style="display:inline;">
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Hủy lịch hẹn này?')">
+                                                    <i class="fas fa-times"></i> Hủy
+                                                </button>
+                                            </form>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-calendar-times text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Bạn chưa có lịch hẹn nào</p>
+                    <a href="/Patient/BookAppointment" class="btn btn-primary-custom">Đặt lịch khám ngay</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

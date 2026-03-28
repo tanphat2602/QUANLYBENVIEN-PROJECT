@@ -1,0 +1,267 @@
+@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = ViewBag.Title ?? "Danh sách";
+    Layout = "_Layout";
+    
+    var items = Model?.ToList() ?? new List<dynamic>();
+    var firstItem = items.FirstOrDefault();
+    var headers = new List<string>();
+    var hasActions = ViewBag.Controller != null;
+}
+
+<!-- Header -->
+<section style="background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%); color: white; padding: 40px 0; margin: -40px -15px 40px; border-radius: 0 0 50px 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 style="font-size: 2rem; font-weight: 700;">
+                    @if (ViewBag.Controller == "Patients")
+                    {
+                        <i class="fas fa-user-injured me-3"></i>
+                    }
+                    else if (ViewBag.Controller == "Doctors")
+                    {
+                        <i class="fas fa-user-md me-3"></i>
+                    }
+                    else if (ViewBag.Controller == "Departments")
+                    {
+                        <i class="fas fa-building me-3"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-list me-3"></i>
+                    }
+                    @ViewBag.Title
+                </h1>
+                <p class="mt-2" style="opacity: 0.9;">Quản lý @ViewBag.Title.ToLower() trong hệ thống</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                @if (hasActions)
+                {
+                    var createLink = ViewBag.Controller == "Patients" ? "/Admin/CreatePatient" :
+                                   ViewBag.Controller == "Doctors" ? "/Admin/CreateDoctor" : "#";
+                    <a href="@createLink" class="btn" style="background: white; color: #0f4c75; font-weight: 600; border-radius: 25px; padding: 10px 25px;">
+                        <i class="fas fa-plus me-2"></i>Thêm mới
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Alert -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<!-- Table -->
+<section>
+    <div class="container">
+        <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead style="background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%); color: white;">
+                            <tr>
+                                @if (ViewBag.Controller == "Patients")
+                                {
+                                    <th class="border-0 py-3 ps-4">Mã BN</th>
+                                    <th class="border-0 py-3">Họ và tên</th>
+                                    <th class="border-0 py-3">Email</th>
+                                    <th class="border-0 py-3">Điện thoại</th>
+                                    <th class="border-0 py-3">Giới tính</th>
+                                    <th class="border-0 py-3">BHYT</th>
+                                    <th class="border-0 py-3 text-center">Hành động</th>
+                                }
+                                else if (ViewBag.Controller == "Doctors")
+                                {
+                                    <th class="border-0 py-3 ps-4">Mã BS</th>
+                                    <th class="border-0 py-3">Họ và tên</th>
+                                    <th class="border-0 py-3">Chuyên khoa</th>
+                                    <th class="border-0 py-3">Phòng ban</th>
+                                    <th class="border-0 py-3">Phí khám</th>
+                                    <th class="border-0 py-3 text-center">Hành động</th>
+                                }
+                                else if (ViewBag.Controller == "Departments")
+                                {
+                                    <th class="border-0 py-3 ps-4">Mã Khoa</th>
+                                    <th class="border-0 py-3">Tên khoa</th>
+                                    <th class="border-0 py-3">Mô tả</th>
+                                    <th class="border-0 py-3">Vị trí</th>
+                                    <th class="border-0 py-3">Trạng thái</th>
+                                    <th class="border-0 py-3 text-center">Hành động</th>
+                                }
+                                else
+                                {
+                                    <th class="border-0 py-3 ps-4">STT</th>
+                                    <th class="border-0 py-3">Thông tin</th>
+                                    <th class="border-0 py-3">Trạng thái</th>
+                                    <th class="border-0 py-3 text-center">Hành động</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (items.Any())
+                            {
+                                @if (ViewBag.Controller == "Patients")
+                                {
+                                    var index = 1;
+                                    foreach (var item in items)
+                                    {
+                                        <tr>
+                                            <td class="ps-4 fw-bold">#@index</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0f4c75, #1b6ca8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                                                        <i class="fas fa-user text-white" style="font-size: 0.9rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>@item.FullName</strong><br>
+                                                        <small class="text-muted">@(item.Address ?? "Chưa cập nhật")</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Phone</td>
+                                            <td>
+                                                @if (item.Gender == "Nam")
+                                                {
+                                                    <span class="badge" style="background: #dbeafe; color: #1d4ed8;"><i class="fas fa-mars me-1"></i>@item.Gender</span>
+                                                }
+                                                else if (item.Gender == "Nữ")
+                                                {
+                                                    <span class="badge" style="background: #fce7f3; color: #be185d;"><i class="fas fa-venus me-1"></i>@item.Gender</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge" style="background: #f3f4f6; color: #6b7280;">@item.Gender</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (!string.IsNullOrEmpty(item.InsuranceProvider))
+                                                {
+                                                    <span class="badge" style="background: #dcfce7; color: #15803d;"><i class="fas fa-shield-alt me-1"></i>@item.InsuranceProvider</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">Không có</span>
+                                                }
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="/Admin/EditPatient/@item.PatientID" class="btn btn-sm btn-outline-primary me-1" title="Sửa">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="/Admin/DeletePatient/@item.PatientID" class="btn btn-sm btn-outline-danger" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                                else if (ViewBag.Controller == "Doctors")
+                                {
+                                    var index = 1;
+                                    foreach (var item in items)
+                                    {
+                                        <tr>
+                                            <td class="ps-4 fw-bold">#@index</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                                                        <i class="fas fa-user-md text-white" style="font-size: 0.9rem;"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>@item.FullName</strong><br>
+                                                        <small class="text-muted">@item.Email</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge" style="background: #ede9fe; color: #7c3aed;">@item.Specialty</span></td>
+                                            <td>@item.DepartmentName</td>
+                                            <td><strong style="color: #0f4c75;">@String.Format("{0:N0}đ", item.ConsultationFee)</strong></td>
+                                            <td class="text-center">
+                                                <a href="/Admin/EditDoctor/@item.DoctorID" class="btn btn-sm btn-outline-primary me-1" title="Sửa">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="/Admin/DeleteDoctor/@item.DoctorID" class="btn btn-sm btn-outline-danger" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                                else if (ViewBag.Controller == "Departments")
+                                {
+                                    var index = 1;
+                                    foreach (var item in items)
+                                    {
+                                        <tr>
+                                            <td class="ps-4 fw-bold">#@index</td>
+                                            <td><strong>@item.DepartmentName</strong></td>
+                                            <td>@item.Description</td>
+                                            <td><i class="fas fa-map-marker-alt me-1 text-muted"></i>@item.Location</td>
+                                            <td>
+                                                @if (item.Status == "Hoạt động")
+                                                {
+                                                    <span class="badge" style="background: #dcfce7; color: #15803d;"><i class="fas fa-check me-1"></i>@item.Status</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge" style="background: #fee2e2; color: #dc2626;"><i class="fas fa-times me-1"></i>@item.Status</span>
+                                                }
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1" title="Sửa">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                                else
+                                {
+                                    var index = 1;
+                                    foreach (var item in items)
+                                    {
+                                        <tr>
+                                            <td class="ps-4">@index</td>
+                                            <td>@item</td>
+                                            <td><span class="badge bg-secondary">-</span></td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="7" class="text-center py-5">
+                                        <i class="fas fa-inbox" style="font-size: 3rem; color: #d1d5db;"></i>
+                                        <p class="text-muted mt-2">Không có dữ liệu</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,171 @@
+@model QuanLyBenhVien.Frontend.Models.PatientProfile
+@{
+    ViewData["Title"] = "Đặt lịch khám";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-calendar-plus me-2"></i>Đặt lịch khám mới</h2>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form asp-action="BookAppointment" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Chọn khoa khám</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Khoa <span class="text-danger">*</span></label>
+                            <select id="departmentSelect" class="form-select" required>
+                                <option value="">-- Chọn khoa --</option>
+                                @if (ViewBag.Departments != null)
+                                {
+                                    @foreach (var dept in ViewBag.Departments)
+                                    {
+                                        <option value="@dept.DepartmentID">@dept.DepartmentName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Chọn bác sĩ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Bác sĩ <span class="text-danger">*</span></label>
+                            <select id="doctorSelect" name="DoctorID" class="form-select" required disabled>
+                                <option value="">-- Vui lòng chọn khoa trước --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Chọn ngày và giờ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Ngày khám <span class="text-danger">*</span></label>
+                            <input type="date" id="appointmentDate" name="AppointmentDate" class="form-control" 
+                                   min="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Giờ khám <span class="text-danger">*</span></label>
+                            <select id="timeSlotSelect" name="TimeSlot" class="form-select" required disabled>
+                                <option value="">-- Chọn ngày trước --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Thông tin khám</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Loại khám <span class="text-danger">*</span></label>
+                            <select name="AppointmentType" class="form-select" required>
+                                <option value="Khám bệnh">Khám bệnh</option>
+                                <option value="Khám định kỳ">Khám định kỳ</option>
+                                <option value="Tái khám">Tái khám</option>
+                                <option value="Khám chuyên khoa">Khám chuyên khoa</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Lý do khám <span class="text-danger">*</span></label>
+                            <textarea name="Reason" class="form-control" rows="3" required 
+                                      placeholder="Mô tả triệu chứng hoặc lý do khám..."></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="isEmergency" name="IsEmergency" value="true" />
+                            <label class="form-check-label" for="isEmergency">Khám cần gấp</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary-custom w-100">
+                    <i class="fas fa-check me-2"></i>Xác nhận đặt lịch
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Filter doctors by department
+            $('#departmentSelect').change(function() {
+                var deptId = $(this).val();
+                var doctors = @Html.Raw(Json.Serialize(ViewBag.Doctors));
+                var filtered = doctors.filter(d => d.departmentID == deptId);
+                
+                $('#doctorSelect').empty().append('<option value="">-- Chọn bác sĩ --</option>');
+                filtered.forEach(d => {
+                    $('#doctorSelect').append(`<option value="${d.doctorID}">${d.fullName} - ${d.specialty}</option>`);
+                });
+                $('#doctorSelect').prop('disabled', filtered.length === 0);
+            });
+
+            // Get time slots when date changes
+            $('#appointmentDate').change(function() {
+                var doctorId = $('#doctorSelect').val();
+                var date = $(this).val();
+                
+                if (doctorId && date) {
+                    $.get('/Patient/GetTimeSlots', { doctorId: doctorId, date: date }, function(slots) {
+                        $('#timeSlotSelect').empty().append('<option value="">-- Chọn giờ --</option>');
+                        slots.forEach(slot => {
+                            $('#timeSlotSelect').append(`<option value="${slot}">${slot}</option>`);
+                        });
+                        $('#timeSlotSelect').prop('disabled', slots.length === 0);
+                    });
+                }
+            });
+
+            // Update time slots when doctor changes
+            $('#doctorSelect').change(function() {
+                var doctorId = $(this).val();
+                var date = $('#appointmentDate').val();
+                
+                if (doctorId && date) {
+                    $.get('/Patient/GetTimeSlots', { doctorId: doctorId, date: date }, function(slots) {
+                        $('#timeSlotSelect').empty().append('<option value="">-- Chọn giờ --</option>');
+                        slots.forEach(slot => {
+                            $('#timeSlotSelect').append(`<option value="${slot}">${slot}</option>`);
+                        });
+                        $('#timeSlotSelect').prop('disabled', slots.length === 0);
+                    });
+                }
+            });
+        });
+    </script>
+}

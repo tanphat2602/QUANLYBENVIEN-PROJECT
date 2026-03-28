@@ -1,0 +1,115 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Medicine>
+@{
+    ViewData["Title"] = "Kho thuốc";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-pills me-2"></i>Quản lý kho thuốc</h2>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                <div class="card-body">
+                    <i class="fas fa-pills" style="font-size: 1.5rem; color: #667eea;"></i>
+                    <h4 class="mt-2 mb-0" style="color: #0f4c75;">@Model.Count()</h4>
+                    <small class="text-muted">Tổng thuốc</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                <div class="card-body">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem; color: #f59e0b;"></i>
+                    <h4 class="mt-2 mb-0" style="color: #0f4c75;">@Model.Count(m => m.Stock < 100)</h4>
+                    <small class="text-muted">Sắp hết</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                <div class="card-body">
+                    <i class="fas fa-times-circle" style="font-size: 1.5rem; color: #dc2626;"></i>
+                    <h4 class="mt-2 mb-0" style="color: #0f4c75;">@Model.Count(m => m.Stock == 0)</h4>
+                    <small class="text-muted">Hết hàng</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                <div class="card-body">
+                    <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #10b981;"></i>
+                    <h4 class="mt-2 mb-0" style="color: #0f4c75;">@Model.Count(m => m.Stock >= 100)</h4>
+                    <small class="text-muted">Còn hàng</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Danh sách thuốc</h5>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên thuốc</th>
+                                <th>Tên generic</th>
+                                <th>Hãng sx</th>
+                                <th>Đơn vị</th>
+                                <th>Giá</th>
+                                <th>Tồn kho</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var med in Model)
+                            {
+                                <tr>
+                                    <td>@med.MedicineID</td>
+                                    <td>@med.MedicineName</td>
+                                    <td>@med.GenericName</td>
+                                    <td>@med.Manufacturer</td>
+                                    <td>@med.Unit</td>
+                                    <td>@med.Price.ToString("N0") đ</td>
+                                    <td>
+                                        @if (med.Stock < 100)
+                                        {
+                                            <span class="text-danger fw-bold">@med.Stock</span>
+                                        }
+                                        else
+                                        {
+                                            <span>@med.Stock</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            var stockClass = med.Stock == 0 ? "bg-danger" : (med.Stock < 100 ? "bg-warning" : "bg-success");
+                                        }
+                                        <span class="badge @stockClass">@(med.Stock == 0 ? "Hết hàng" : (med.Stock < 100 ? "Sắp hết" : "Còn hàng"))</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-pills text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Không có thuốc nào</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

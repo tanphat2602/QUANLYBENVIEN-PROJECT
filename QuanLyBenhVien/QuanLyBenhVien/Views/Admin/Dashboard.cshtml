@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Trang quản trị";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xin chào, Admin!</h2>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card border-primary mb-3">
+            <div class="card-body text-primary">
+                <h5 class="card-title">Tổng số người dùng</h5>
+                <p class="card-text">@ViewBag.TotalUsers</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-success mb-3">
+            <div class="card-body text-success">
+                <h5 class="card-title">Bác sĩ</h5>
+                <p class="card-text">@ViewBag.TotalDoctors</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-info mb-3">
+            <div class="card-body text-info">
+                <h5 class="card-title">Bệnh nhân</h5>
+                <p class="card-text">@ViewBag.TotalPatients</p>
+            </div>
+        </div>
+    </div>
+</div>

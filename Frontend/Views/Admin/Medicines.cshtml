@@ -1,0 +1,144 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Medicine>
+@{
+    ViewData["Title"] = "Quản lý Thuốc";
+    Layout = "_Layout";
+    var medicines = Model?.ToList() ?? new List<QuanLyBenhVien.Frontend.Models.Medicine>();
+}
+
+<!-- Header -->
+<section style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 40px 0; margin: -40px -15px 40px; border-radius: 0 0 50px 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 style="font-size: 2rem; font-weight: 700;"><i class="fas fa-pills me-3"></i>Quản lý Thuốc</h1>
+                <p class="mt-2" style="opacity: 0.9;">Danh sách thuốc và kho thuốc</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="#" class="btn" style="background: white; color: #059669; font-weight: 600; border-radius: 25px; padding: 10px 25px;">
+                    <i class="fas fa-plus me-2"></i>Thêm thuốc
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="mb-4">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-pills" style="font-size: 1.5rem; color: #059669;"></i>
+                        <h4 class="mt-2 mb-0">@medicines.Count</h4>
+                        <small class="text-muted">Tổng loại thuốc</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-boxes" style="font-size: 1.5rem; color: #f59e0b;"></i>
+                        <h4 class="mt-2 mb-0">@medicines.Sum(m => m.Stock).ToString("N0")</h4>
+                        <small class="text-muted">Tổng tồn kho</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center py-3" style="border-radius: 12px;">
+                    <div class="card-body">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem; color: #dc2626;"></i>
+                        <h4 class="mt-2 mb-0">@medicines.Count(m => m.Stock < 100)</h4>
+                        <small class="text-muted">Sắp hết hàng</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Table -->
+<section>
+    <div class="container">
+        <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white;">
+                            <tr>
+                                <th class="border-0 py-3 ps-4">Mã thuốc</th>
+                                <th class="border-0 py-3">Tên thuốc</th>
+                                <th class="border-0 py-3">Hoạt chất</th>
+                                <th class="border-0 py-3">Nhà sản xuất</th>
+                                <th class="border-0 py-3">Dạng bào chế</th>
+                                <th class="border-0 py-3 text-end">Đơn giá</th>
+                                <th class="border-0 py-3 text-end">Tồn kho</th>
+                                <th class="border-0 py-3 text-center">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (medicines.Any())
+                            {
+                                foreach (var med in medicines)
+                                {
+                                    <tr>
+                                        <td class="ps-4 fw-bold">#@med.MedicineID</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div style="width: 35px; height: 35px; background: linear-gradient(135deg, #059669, #10b981); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                                                    <i class="fas fa-pills text-white" style="font-size: 0.8rem;"></i>
+                                                </div>
+                                                <strong>@med.MedicineName</strong>
+                                            </div>
+                                        </td>
+                                        <td>@med.GenericName</td>
+                                        <td>@med.Manufacturer</td>
+                                        <td><span class="badge" style="background: #e0e7ff; color: #4338ca;">@med.DosageForm</span></td>
+                                        <td class="text-end fw-bold" style="color: #059669;">@String.Format("{0:N0}đ", med.Price)</td>
+                                        <td class="text-end">
+                                            @{
+                                                var stockStyle = "";
+                                                var stockIcon = "";
+                                                if (med.Stock < 100)
+                                                {
+                                                    stockStyle = "color: #dc2626; font-weight: bold;";
+                                                    stockIcon = "<i class=\"fas fa-exclamation-circle text-danger ms-1\"></i>";
+                                                }
+                                                else if (med.Stock < 500)
+                                                {
+                                                    stockStyle = "color: #f59e0b;";
+                                                }
+                                                else
+                                                {
+                                                    stockStyle = "color: #059669;";
+                                                }
+                                            }
+                                            <span style="@stockStyle">@med.Stock.ToString("N0") @med.Unit</span>
+                                            @if (med.Stock < 100)
+                                            {
+                                                <i class="fas fa-exclamation-circle text-danger ms-1"></i>
+                                            }
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-primary me-1" title="Sửa"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-outline-secondary" title="Nhập kho"><i class="fas fa-plus"></i></button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="8" class="text-center py-5">
+                                        <i class="fas fa-pills" style="font-size: 3rem; color: #d1d5db;"></i>
+                                        <p class="text-muted mt-2">Không có thuốc trong kho</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

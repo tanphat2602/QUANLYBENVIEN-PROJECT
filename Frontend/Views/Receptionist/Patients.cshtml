@@ -1,0 +1,59 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Patient>
+@{
+    ViewData["Title"] = "Quản lý bệnh nhân";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-users me-2"></i>Quản lý bệnh nhân</h2>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã BN</th>
+                                <th>Họ tên</th>
+                                <th>Email</th>
+                                <th>Điện thoại</th>
+                                <th>Giới tính</th>
+                                <th>Nhóm máu</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var patient in Model)
+                            {
+                                <tr>
+                                    <td>@patient.PatientID</td>
+                                    <td>@patient.FullName</td>
+                                    <td>@patient.Email</td>
+                                    <td>@patient.Phone</td>
+                                    <td>@patient.Gender</td>
+                                    <td>@patient.BloodType</td>
+                                    <td>
+                                        <span class="badge bg-success">@patient.Status</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-users text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Không có bệnh nhân nào</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

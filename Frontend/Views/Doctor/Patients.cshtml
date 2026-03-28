@@ -1,0 +1,32 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Patient>
+
+@{
+    ViewData["Title"] = "Bệnh nhân của bác sĩ";
+    Layout = "_Layout";
+}
+
+<h2>Danh sách bệnh nhân</h2>
+
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã bệnh nhân</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Địa chỉ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.PatientID</td>
+                <td>@patient.FullName</td>
+                <td>@patient.Email</td>
+                <td>@patient.Phone</td>
+                <td>@patient.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>

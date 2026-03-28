@@ -1,0 +1,115 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.Prescription>
+@{
+    ViewData["Title"] = "Đơn thuốc";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-pills me-2"></i>Đơn thuốc của tôi</h2>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn</th>
+                                <th>Ngày kê</th>
+                                <th>Chẩn đoán</th>
+                                <th>Trạng thái</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var prescription in Model)
+                            {
+                                <tr>
+                                    <td>#@prescription.PrescriptionID</td>
+                                    <td>@prescription.CreatedAt</td>
+                                    <td>@prescription.Diagnosis</td>
+                                    <td>
+                                        @{
+                                            var statusClass = prescription.Status switch
+                                            {
+                                                "Đã cấp phát" => "bg-success",
+                                                "Chờ cấp phát" => "bg-warning",
+                                                _ => "bg-secondary"
+                                            };
+                                        }
+                                        <span class="badge @statusClass">@prescription.Status</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#prescriptionModal@(prescription.PrescriptionID)">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @foreach (var prescription in Model)
+                {
+                    <div class="modal fade" id="prescriptionModal@(prescription.PrescriptionID)" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Chi tiết đơn thuốc #@prescription.PrescriptionID</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Chẩn đoán:</strong> @prescription.Diagnosis</p>
+                                    <p><strong>Ngày kê:</strong> @prescription.CreatedAt</p>
+                                    <hr>
+                                    <h6>Danh sách thuốc:</h6>
+                                    @if (prescription.Details != null && prescription.Details.Any())
+                                    {
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tên thuốc</th>
+                                                    <th>Liều lượng</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Hướng dẫn</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var detail in prescription.Details)
+                                                {
+                                                    <tr>
+                                                        <td>@detail.MedicineName</td>
+                                                        <td>@detail.Dosage</td>
+                                                        <td>@detail.Quantity</td>
+                                                        <td>@detail.Instructions</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else
+                                    {
+                                        <p class="text-muted">Không có thông tin chi tiết</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-pills text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Chưa có đơn thuốc nào</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

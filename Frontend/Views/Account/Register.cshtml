@@ -1,0 +1,279 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - MedCare Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 50%, #3282b8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .register-wrapper { width: 100%; max-width: 950px; }
+        .register-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+        }
+        .register-left {
+            flex: 1;
+            background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%);
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+        .register-left .hospital-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        .register-left h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
+        .register-left p { font-size: 0.95rem; opacity: 0.9; line-height: 1.7; }
+        .register-left .benefits { margin-top: 30px; }
+        .register-left .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+        .register-left .benefit-item i {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        .register-right {
+            flex: 1.3;
+            padding: 45px 40px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .register-right::-webkit-scrollbar { width: 5px; }
+        .register-right::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .register-right .header-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(15, 76, 117, 0.3);
+            margin: 0 auto;
+        }
+        .register-right h2 { color: #333; font-weight: 600; margin-top: 15px; margin-bottom: 5px; text-align: center; }
+        .register-right .subtitle { color: #666; font-size: 0.85rem; text-align: center; }
+        .form-row { display: flex; gap: 12px; }
+        .form-row .form-group { flex: 1; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #444; font-weight: 500; font-size: 0.85rem; }
+        .form-group label .required { color: #dc2626; }
+        .input-group { position: relative; }
+        .input-group i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #0f4c75; font-size: 0.9rem; }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px 12px 12px 42px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #0f4c75;
+            box-shadow: 0 0 0 4px rgba(15, 76, 117, 0.1);
+            outline: none;
+        }
+        .btn-register {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-register:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 30px rgba(15, 76, 117, 0.4); 
+        }
+        .login-link { text-align: center; margin-top: 18px; color: #666; font-size: 0.9rem; }
+        .login-link a { color: #0f4c75; text-decoration: none; font-weight: 600; }
+        .login-link a:hover { text-decoration: underline; }
+        .alert { padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; font-size: 0.85rem; display: flex; align-items: center; }
+        .alert-danger { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+        .alert-danger i { margin-right: 10px; }
+        .info-box { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 12px; padding: 14px; margin-bottom: 18px; }
+        .info-box p { color: #0369a1; font-size: 0.85rem; margin: 0; }
+        .info-box i { margin-right: 8px; color: #0ea5e9; }
+        @@media (max-width: 768px) {
+            .register-left { display: none; }
+            .register-container { max-width: 500px; }
+            .register-right { padding: 35px 25px; }
+            .form-row { flex-direction: column; gap: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-wrapper">
+        <div class="register-container">
+            <div class="register-left">
+                <div class="hospital-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h1><i class="fas fa-heartbeat me-2"></i>MedCare Hospital</h1>
+                <p>Đăng ký tài khoản để trải nghiệm dịch vụ chăm sóc sức khỏe hiện đại và tiện lợi.</p>
+                
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Đặt lịch khám online dễ dàng</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Xem kết quả xét nghiệm trực tuyến</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-video"></i>
+                        <span>Tư vấn bác sĩ từ xa</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Nhận thông báo lịch hẹn tự động</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-history"></i>
+                        <span>Theo dõi lịch sử khám bệnh</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="register-right">
+                <div class="header-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h2>Tạo tài khoản mới</h2>
+                <p class="subtitle">Tham gia cùng chúng tôi để trải nghiệm dịch vụ tốt nhất</p>
+
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-circle"></i>
+                        @ViewBag.ErrorMessage
+                    </div>
+                }
+
+                <div class="info-box">
+                    <p><i class="fas fa-info-circle"></i> Các trường có dấu <span style="color: #dc2626;">*</span> là bắt buộc</p>
+                </div>
+
+                <form method="post" action="/Account/Register">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="Username">Tên đăng nhập <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="Username" name="Username" placeholder="Nhập tên đăng nhập" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Email">Email <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="Email" name="Email" placeholder="Nhập địa chỉ email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="Password">Mật khẩu <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="Password" name="Password" placeholder="Tối thiểu 8 ký tự" required minlength="8">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Phone">Số điện thoại</label>
+                            <div class="input-group">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="Phone" name="Phone" placeholder="0xxx xxx xxx">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="FullName">Họ và tên <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="FullName" name="FullName" placeholder="Nhập họ và tên đầy đủ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Gender">Giới tính</label>
+                        <div class="input-group">
+                            <i class="fas fa-venus-mars"></i>
+                            <select id="Gender" name="Gender">
+                                <option value="">-- Chọn giới tính --</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-register">
+                        <i class="fas fa-user-plus"></i> Đăng ký
+                    </button>
+                </form>
+
+                <p class="login-link">
+                    Đã có tài khoản? <a href="/Account/Login">Đăng nhập ngay</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

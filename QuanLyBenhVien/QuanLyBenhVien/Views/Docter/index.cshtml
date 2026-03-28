@@ -1,0 +1,19 @@
+﻿@model QuanLyBenhVien.Models.Doctor
+
+<h2>Chỉnh sửa thông tin bác sĩ</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Chuyên khoa:</label>
+        @Html.TextBoxFor(m => m.Specialty)
+    </div>
+    <div>
+        <label>Lịch làm việc:</label>
+        @Html.TextAreaFor(m => m.WorkingSchedule)
+    </div>
+    <div>
+        <label>Phòng ban:</label>
+        @Html.TextBoxFor(m => m.DepartmentID)
+    </div>
+    <button type="submit">Lưu</button>
+}

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 15.875" name="QLBV">
+  <DataContextMoniker Name="/QLBVDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a2518f10-c8eb-4501-8a25-f6d4161f30e3" absoluteBounds="6.25, 6.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/QLBVDataContext/Appointment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8272027c-0b22-4cff-a8af-5169508b0762" absoluteBounds="6.265, 6.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c6603b7-bc8e-454c-9818-65da3a5c5469" absoluteBounds="0.75, 11.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLBVDataContext/Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e54044b-939b-4bf1-9379-0d5553a40a1b" absoluteBounds="0.765, 12.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b9bd638-0547-424c-9694-21deadb9b7cb" absoluteBounds="3.5, 9.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/QLBVDataContext/Doctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fac96cc-78bb-4162-9323-d91676d1b6ff" absoluteBounds="3.515, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97c1b161-d5ff-4ec9-aa4d-b6639e70d3b1" absoluteBounds="0.75, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLBVDataContext/Insurance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18bf137b-8c53-4162-add4-2ae88bfb1145" absoluteBounds="0.765, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04e7f725-45aa-4e74-820b-2ba53e327eeb" absoluteBounds="6.25, 9.5, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/QLBVDataContext/MedicalRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4dfd4d05-c1b4-4724-8b08-17ac0ae3d0af" absoluteBounds="6.265, 9.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f20922ee-939b-40b1-9392-0233e34780da" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLBVDataContext/MedicalService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9abb2789-5c78-4e65-bb76-6f9eedcb4ab2" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3ee12c1-33f3-4272-a871-f5b9802f021b" absoluteBounds="3.5, 13.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/QLBVDataContext/Notification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="954634e2-45ff-4f97-b9bb-4536c7ce11b9" absoluteBounds="3.515, 14.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b965bab5-7301-4b09-a165-13d46cf2f37b" absoluteBounds="6.25, 3.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/QLBVDataContext/Payment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1da8509b-2db3-412d-9477-f4f5b4f00cf9" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" absoluteBounds="3.5, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLBVDataContext/Patient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="702c590c-fc64-44c4-8dab-6ef010168b23" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b561ce0e-5621-45c0-b983-c50a5f665abf" absoluteBounds="9, 9.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/QLBVDataContext/Prescription" />
+      <nestedChildShapes>
+        <elementListCompartment Id="820b8a4f-2aaa-4e8e-9bdc-5ff0bdee2fc3" absoluteBounds="9.015, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="902f6167-f6fe-4aba-93c3-e137c9463d54" absoluteBounds="0.75, 9.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLBVDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5053058e-e784-467e-b859-e5c969586dd2" absoluteBounds="0.765, 10.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb720257-35ea-4281-8d7c-c0716967f283" absoluteBounds="3.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLBVDataContext/StatisticsReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c39fa4a0-f7b2-427d-815a-683ee1213bd3" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2532b1ac-80d4-4610-a031-10e110846641" absoluteBounds="3.5, 6.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLBVDataContext/UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="332f574a-71b6-4d9a-979f-c2e661982c11" absoluteBounds="3.515, 7.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f85e9281-a362-4d0f-b6c1-cf305b5a92c9" absoluteBounds="0.75, 6.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/QLBVDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2877a94-d4a2-4edc-87fb-fb79986fde91" absoluteBounds="0.765, 6.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 9.62636122831531); (5.875 : 9.25136122831531); (5.875 : 7.48159912109375); (5.94791666666667 : 7.48159912109375 : JumpStart); (6.11458333333333 : 7.48159912109375 : JumpEnd); (6.25 : 7.48159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Doctor/Doctor_Appointment" />
+      <nodes>
+        <classShapeMoniker Id="2b9bd638-0547-424c-9694-21deadb9b7cb" />
+        <classShapeMoniker Id="a2518f10-c8eb-4501-8a25-f6d4161f30e3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.4719962565104); (3.22916666666667 : 12.4719962565104 : JumpStart); (3.39583333333333 : 12.4719962565104 : JumpEnd); (4.5 : 12.4719962565104); (4.5 : 11.3958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Department/Department_Doctor" />
+      <nodes>
+        <classShapeMoniker Id="3c6603b7-bc8e-454c-9818-65da3a5c5469" />
+        <classShapeMoniker Id="2b9bd638-0547-424c-9694-21deadb9b7cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.5423815191056); (6.25 : 10.5423815191056)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Doctor/Doctor_MedicalRecord" />
+      <nodes>
+        <classShapeMoniker Id="2b9bd638-0547-424c-9694-21deadb9b7cb" />
+        <classShapeMoniker Id="04e7f725-45aa-4e74-820b-2ba53e327eeb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.17687968659856); (5.9375 : 5.61437968659856); (5.9375 : 6.95954756054688); (5.94791666666667 : 6.95954756054687 : JumpStart); (6.11458333333333 : 6.95954756054688 : JumpEnd); (6.25 : 6.95954756054688)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Patient/Patient_Appointment" />
+      <nodes>
+        <classShapeMoniker Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" />
+        <classShapeMoniker Id="a2518f10-c8eb-4501-8a25-f6d4161f30e3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.19873716105769); (6.03125 : 5.72998716105769); (6.03125 : 9.98993875955279); (6.25 : 9.98993875955279)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Patient/Patient_MedicalRecord" />
+      <nodes>
+        <classShapeMoniker Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" />
+        <classShapeMoniker Id="04e7f725-45aa-4e74-820b-2ba53e327eeb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.36968734329928); (6.25 : 4.36968734329928)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Patient/Patient_Payment" />
+      <nodes>
+        <classShapeMoniker Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" />
+        <classShapeMoniker Id="b965bab5-7301-4b09-a165-13d46cf2f37b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.41429768880208); (3.5 : 4.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/Insurance/Insurance_Patient" />
+      <nodes>
+        <classShapeMoniker Id="97c1b161-d5ff-4ec9-aa4d-b6639e70d3b1" />
+        <classShapeMoniker Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.5104484049479); (9 : 10.5104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/MedicalRecord/MedicalRecord_Prescription" />
+      <nodes>
+        <classShapeMoniker Id="04e7f725-45aa-4e74-820b-2ba53e327eeb" />
+        <classShapeMoniker Id="b561ce0e-5621-45c0-b983-c50a5f665abf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.875); (3.125 : 9.5); (3.125 : 8.44399251302083); (3.5 : 8.06899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/QLBVDataContext/Role/Role_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="902f6167-f6fe-4aba-93c3-e137c9463d54" />
+        <classShapeMoniker Id="2532b1ac-80d4-4610-a031-10e110846641" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.82355681750801); (3.06607443490112 : 9.13963125240913 : JumpStart); (3.18392556509888 : 9.25748238260689 : JumpEnd); (3.375 : 9.44855681750801); (3.375 : 10.5104484049479); (3.5 : 10.5104484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/User/User_Doctor" />
+      <nodes>
+        <classShapeMoniker Id="f85e9281-a362-4d0f-b6c1-cf305b5a92c9" />
+        <classShapeMoniker Id="2b9bd638-0547-424c-9694-21deadb9b7cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.8281722021234); (3.06607443490112 : 9.14424663702452 : JumpStart); (3.18392556509888 : 9.26209776722228 : JumpEnd); (3.3125 : 9.3906722021234); (3.3125 : 14.6065991210937); (3.5 : 14.6065991210937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/User/User_Notification" />
+      <nodes>
+        <classShapeMoniker Id="f85e9281-a362-4d0f-b6c1-cf305b5a92c9" />
+        <classShapeMoniker Id="f3ee12c1-33f3-4272-a871-f5b9802f021b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.12653746153846); (3.125 : 5.75153746153846); (3.125 : 4.84019853320313); (3.5 : 4.84019853320313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/User/User_Patient" />
+      <nodes>
+        <classShapeMoniker Id="f85e9281-a362-4d0f-b6c1-cf305b5a92c9" />
+        <classShapeMoniker Id="443db478-2172-4a4f-9e2d-3fe9bc93b6ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.44074375651042); (3.5 : 7.44074375651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBVDataContext/User/User_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="f85e9281-a362-4d0f-b6c1-cf305b5a92c9" />
+        <classShapeMoniker Id="2532b1ac-80d4-4610-a031-10e110846641" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

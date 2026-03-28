@@ -1,0 +1,107 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.MedicalRecord>
+@{
+    ViewData["Title"] = "Hồ sơ bệnh án";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-file-medical me-2"></i>Hồ sơ bệnh án</h2>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ngày khám</th>
+                                <th>Bác sĩ</th>
+                                <th>Triệu chứng</th>
+                                <th>Chẩn đoán</th>
+                                <th>Trạng thái</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var record in Model)
+                            {
+                                <tr>
+                                    <td>@record.DateCreated</td>
+                                    <td>@record.DoctorName</td>
+                                    <td>@(record.Symptoms?.Length > 50 ? record.Symptoms.Substring(0, 50) + "..." : record.Symptoms)</td>
+                                    <td>@record.Diagnosis</td>
+                                    <td>
+                                        <span class="badge bg-success">@record.Status</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#recordModal@(record.RecordID)">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @foreach (var record in Model)
+                {
+                    <div class="modal fade" id="recordModal@(record.RecordID)" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Chi tiết bệnh án</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Ngày khám:</strong> @record.DateCreated</p>
+                                            <p><strong>Bác sĩ:</strong> @record.DoctorName</p>
+                                            <p><strong>Triệu chứng:</strong></p>
+                                            <p>@record.Symptoms</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Chẩn đoán:</strong></p>
+                                            <p>@record.Diagnosis</p>
+                                            <p><strong>Phương pháp điều trị:</strong></p>
+                                            <p>@record.Treatment</p>
+                                        </div>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(record.Notes))
+                                    {
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <p><strong>Ghi chú:</strong> @record.Notes</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(record.VitalSigns))
+                                    {
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <p><strong>Triệu chứng sinh tồn:</strong> @record.VitalSigns</p>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-file-medical text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Chưa có hồ sơ bệnh án</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

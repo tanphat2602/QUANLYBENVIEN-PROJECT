@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // hoặc _Layout khác tùy project
+}
+
+<h2>Đăng ký tài khoản</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="Username">Tên đăng nhập:</label>
+        <input type="text" name="Username" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PasswordHash">Mật khẩu:</label>
+        <input type="password" name="PasswordHash" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="FullName">Họ và tên:</label>
+        <input type="text" name="FullName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="email" name="Email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Phone">Số điện thoại:</label>
+        <input type="text" name="Phone" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Gender">Giới tính:</label>
+        <select name="Gender" class="form-control">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Đăng ký</button>
+
+    <br />
+    <br />
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+}

@@ -1,0 +1,61 @@
+@model IEnumerable<QuanLyBenhVien.Frontend.Models.EmergencyRequest>
+@{
+    ViewData["Title"] = "Cấp cứu";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-ambulance me-2"></i>Quản lý cấp cứu</h2>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Bệnh nhân</th>
+                                <th>Lý do</th>
+                                <th>Loại</th>
+                                <th>Ưu tiên</th>
+                                <th>Trạng thái</th>
+                                <th>Thời gian</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>#@item.RequestID</td>
+                                    <td>@item.PatientName</td>
+                                    <td>@item.Reason</td>
+                                    <td>@item.EmergencyType</td>
+                                    <td>
+                                        <span class="badge @(item.Priority == "1" ? "bg-danger" : "bg-warning")">@item.Priority</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">@item.Status</span>
+                                    </td>
+                                    <td>@item.RequestTime</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-ambulance text-muted fa-4x mb-3"></i>
+                    <p class="text-muted">Không có ca cấp cứu nào</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
